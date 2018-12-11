@@ -7,6 +7,43 @@
   <groupId>Rainbow</groupId>
   <artifactId>WindB</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <build> 
+        <plugins> 
+          <plugin> 
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-antrun-plugin</artifactId>
+             <version>1.1</version> 
+             <executions> 
+               <execution> 
+                   <id>id.clean</id> 
+                   <phase>test</phase> 
+                   <goals> 
+                   <goal>run</goal>
+                   </goals> 
+                   <configuration> 
+                   <tasks> 
+                      <echo>===================</echo> 
+					  <echo>=====TestPhase=====</echo>
+					  <echo>===================</echo>
+                   </tasks> 
+                   </configuration>
+              </execution> 
+            </executions> 
+         </plugin>
+         <plugin>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>exec-maven-plugin</artifactId>
+			<version>1.2.1</version>
+			<configuration>
+				<executable>git</executable>
+				<arguments>
+					<argument>config</argument>
+					<argument>--list</argument>
+				</arguments>
+			</configuration>
+		</plugin>		
+       </plugins> 
+    </build>
 
   <name>WindB</name>
   <!-- FIXME change it to the project's website -->
@@ -25,42 +62,5 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-  </dependencies>
-
-  <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-      <plugins>
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.0.0</version>
-        </plugin>
-        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.7.0</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.19.1</version>
-        </plugin>
-		<plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
+   </dependencies>
 </project>
