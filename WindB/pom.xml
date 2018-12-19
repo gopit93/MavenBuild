@@ -12,11 +12,15 @@
       <module>Module01</module>
 	  <module>Module02</module>
     </modules>
+	
+	
   
 
   <name>WindB</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
+  
+
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
