@@ -1,2 +1,0 @@
-# MavenBuild
-Rainbow6WB
